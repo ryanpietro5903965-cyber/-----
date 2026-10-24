@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120b1d">
+<meta name="description" content="Um presente digital feito com carinho para uma maninha muito especial.">
+<title>Feliz vida, minha maninha ♡</title>
+<style>
+:root{
+ --night:#120b1d;--plum:#21132d;--plum2:#2d193a;--pink:#ff91bd;--hot:#ff5e9d;
+ --lilac:#c8a8ff;--cream:#fff2f7;--muted:#cdbdd4;--line:#ffffff18;--gold:#ffe0a8;
+ --shadow:0 22px 70px #0005;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{margin:0;min-height:100vh;background:var(--night);color:var(--cream);font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+button{font:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+::selection{background:#ff91bd55}
+#sky,#petals,#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#sky{z-index:0;background:radial-gradient(ellipse at 12% 0%,#5b2453 0,transparent 34%),radial-gradient(ellipse at 95% 25%,#35245b 0,transparent 33%),radial-gradient(ellipse at 50% 100%,#2a142f 0,transparent 45%),var(--night)}
+#petals{z-index:2}
+#confetti{z-index:10}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff6fc;box-shadow:0 0 8px #fff;animation:twinkle var(--dur,3s) ease-in-out infinite alternate;opacity:var(--op,.6)}
+@keyframes twinkle{to{opacity:.1;transform:scale(.5)}}
+.page{position:relative;z-index:1;width:min(1020px,100%);margin:auto;padding:20px 18px 45px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 2px;color:var(--muted);font-size:.82rem}
+.brand{display:flex;align-items:center;gap:9px;letter-spacing:.04em}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,#ff91bd,#bd91ff);color:#24122d;font-size:1.1rem;box-shadow:0 5px 20px #ff5e9d25}
+.pill{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:#f2ddec;background:#ffffff08}
+.hero{min-height:84vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 4px 62px;position:relative}
+.eyebrow{color:var(--pink);font-size:.7rem;letter-spacing:.23em;text-transform:uppercase;margin:0 0 17px}
+.heart-orbit{width:158px;height:158px;border:1px solid #ff91bd66;border-radius:50%;display:grid;place-items:center;position:relative;margin-bottom:31px;box-shadow:0 0 80px #ff5e9d16,inset 0 0 35px #ff5e9d0e;animation:float 4s ease-in-out infinite}
+.heart-orbit:before,.heart-orbit:after{content:"";position:absolute;inset:11px;border:1px solid #c8a8ff55;border-radius:50%;transform:rotate(35deg) scaleX(1.25)}
+.heart-orbit:after{transform:rotate(-35deg) scaleX(1.25)}
+.heart-core{font-size:4.4rem;filter:drop-shadow(0 0 17px #ff5e9d88);animation:pulse 1.9s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}12%{transform:scale(1.13)}24%{transform:scale(1)}36%{transform:scale(1.08)}48%{transform:scale(1)}}
+@keyframes float{50%{transform:translateY(-9px)}}
+h1{font-size:clamp(2.8rem,10vw,6.3rem);letter-spacing:-.07em;line-height:.91;margin:0;max-width:900px}
+h1 .soft{display:block;font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--pink);letter-spacing:-.055em;margin-top:13px}
+.subtitle{font-size:clamp(1rem,2.5vw,1.2rem);line-height:1.9;color:#e5d5e9;max-width:690px;margin:25px auto 27px}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
+.btn{border:0;border-radius:999px;padding:14px 21px;cursor:pointer;font-weight:800;transition:transform .2s,filter .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-primary{background:linear-gradient(110deg,var(--hot),#c59aff);color:#25102b;box-shadow:0 9px 30px #ff5e9d35}
+.btn-ghost{background:#ffffff08;border:1px solid #ffffff24;color:var(--cream)}
+.small-note{font-size:.76rem;color:#a995b5;margin-top:17px}
+.scroll-mark{position:absolute;bottom:15px;color:#b7a0c2;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase}
+.section{margin:19px 0;padding:clamp(23px,5.5vw,48px);border:1px solid var(--line);border-radius:29px;background:linear-gradient(145deg,#291a35ed,#191020f2);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.section:before{content:"";position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,#ff91bd77,transparent)}
+.section-head{max-width:720px;margin-bottom:22px}
+.label{font-size:.69rem;text-transform:uppercase;letter-spacing:.2em;color:var(--pink);margin:0 0 12px}
+h2{font-size:clamp(1.85rem,5.5vw,3.25rem);letter-spacing:-.05em;line-height:1.04;margin:0 0 17px}
+.intro{color:var(--muted);line-height:1.85;margin:0}
+.letter-paper{position:relative;padding:clamp(20px,4vw,34px);border-radius:20px;background:linear-gradient(135deg,#fff7fb0c,#ff91bd08);border:1px solid #ff91bd28}
+.letter-paper:before{content:"♡";position:absolute;right:18px;top:10px;color:#ff91bd28;font:3rem Georgia,serif}
+.letter{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.04rem,2.6vw,1.17rem);line-height:2;color:#f7eaf2;position:relative;white-space:normal}
+.letter p{margin:0 0 1.05em}
+.letter p:last-child{margin-bottom:0}
+.signature{font-family:Georgia,serif;font-style:italic;font-size:1.55rem;color:var(--pink);margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:24px}
+.card{padding:21px 18px;border:1px solid #ffffff13;border-radius:20px;background:linear-gradient(145deg,#ffffff0a,#ffffff03);min-height:166px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#ff91bd66}
+.card-icon{font-size:1.8rem;display:block;margin-bottom:13px}
+.card h3{margin:0 0 8px;font-size:1.02rem;color:#ffe3ef}
+.card p{margin:0;font-size:.91rem;line-height:1.7;color:var(--muted)}
+.quote{padding:clamp(25px,6vw,45px);text-align:center;border-radius:23px;border:1px solid #c8a8ff2e;background:radial-gradient(ellipse at center,#c8a8ff12,transparent 70%)}
+.quote-mark{font:4rem Georgia,serif;color:var(--lilac);line-height:.8}
+.quote blockquote{font:italic clamp(1.4rem,4vw,2.2rem)/1.55 Georgia,serif;margin:14px auto;max-width:720px;color:#fff0f8}
+.quote cite{font-style:normal;color:var(--pink);font-size:.82rem}
+.secret-wrap{margin-top:22px;padding:22px;border-radius:21px;border:1px dashed #ff91bd66;background:#ff91bd09;text-align:center}
+.secret-message{display:none;max-width:660px;margin:20px auto 0;font:italic clamp(1.1rem,3vw,1.35rem)/1.9 Georgia,serif;color:#ffe5f0}
+.secret-message.open{display:block;animation:reveal .7s ease both}
+@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.gift{display:grid;grid-template-columns:100px 1fr;align-items:center;gap:22px;padding:22px;border:1px solid #ffffff13;background:#ffffff05;border-radius:21px;margin-top:22px}
+.gift-icon{width:92px;height:92px;border-radius:25px;display:grid;place-items:center;background:linear-gradient(135deg,#ff91bd,#bd91ff);font-size:2.6rem;box-shadow:0 10px 35px #ff5e9d1e}
+.gift h3{margin:0 0 8px;font-size:1.15rem}
+.gift p{margin:0;color:var(--muted);line-height:1.75}
+.footer{text-align:center;padding:38px 12px 10px;color:#a995b5;font-size:.8rem;line-height:1.9}
+.footer .end-heart{font-size:1.5rem;letter-spacing:.4em;margin-bottom:10px;color:var(--pink)}
+.float-heart{position:fixed;bottom:-40px;left:var(--x);font-size:var(--size);color:var(--color);pointer-events:none;z-index:5;animation:rise var(--time) linear forwards;filter:drop-shadow(0 0 8px #ff91bd25)}
+@keyframes rise{to{transform:translateY(-115vh) rotate(var(--rot));opacity:0}}
+.reveal-on-scroll{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.reveal-on-scroll.in{opacity:1;transform:none}
+#toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);opacity:0;background:#2b1a36;border:1px solid #ffffff20;padding:12px 17px;border-radius:999px;z-index:20;pointer-events:none;transition:.25s;color:#fff0f8;font-size:.88rem;white-space:nowrap}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){.page{padding:12px 13px 30px}.nav{font-size:.72rem}.hero{min-height:82vh;padding:32px 2px 60px}.heart-orbit{width:132px;height:132px;margin-bottom:26px}.heart-core{font-size:3.8rem}.grid{grid-template-columns:1fr}.card{min-height:0;padding:19px}.section{border-radius:23px;padding:24px 19px}.gift{grid-template-columns:70px 1fr;gap:15px;padding:16px}.gift-icon{width:68px;height:68px;border-radius:20px;font-size:2rem}.pill{display:none}}
+@media(max-width:380px){h1{font-size:2.55rem}.subtitle{font-size:.98rem}.btn{width:100%}.cta-row{width:100%}.letter{line-height:1.85}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}.reveal-on-scroll{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div><div id="petals" aria-hidden="true"></div><div id="confetti" aria-hidden="true"></div>
+<main class="page">
+<nav class="nav" aria-label="Identificação do presente">
+  <div class="brand"><span class="brand-mark">♡</span><span>um presente pra você</span></div>
+  <span class="pill">feito com carinho · de uma tela pra outra</span>
+</nav>
+<header class="hero">
+  <div class="heart-orbit" aria-hidden="true"><div class="heart-core">💗</div></div>
+  <p class="eyebrow">hoje é um dia especial</p>
+  <h1>Feliz aniversário,<span class="soft">minha maninha.</span></h1>
+  <p class="subtitle">A gente pode até estar longe e ter se conhecido por uma tela, mas o carinho que eu tenho por você é de verdade. Hoje eu queria te dar um pedacinho desse carinho, feito especialmente pra você. ♡</p>
+  <div class="cta-row">
+    <button class="btn btn-primary" id="goLetter">Abrir sua cartinha ✉</button>
+    <button class="btn btn-ghost" id="sprinkle">Encher a tela de carinho ✨</button>
+  </div>
+  <p class="small-note">um presentinho simples, mas feito pensando em você</p>
+  <div class="scroll-mark">tem mais aqui embaixo ↓</div>
+</header>
+
+<section class="section reveal-on-scroll" id="letter">
+  <div class="section-head"><p class="label">01 · de coração</p><h2>Pra minha maninha, com todo carinho.</h2><p class="intro">Tem gente que chega pela internet e, mesmo de longe, acaba ganhando um espaço bonito na nossa vida.</p></div>
+  <div class="letter-paper"><div class="letter">
+    <p>Feliz aniversário, minha maninha! 💗</p>
+    <p>Eu não queria deixar esse dia passar sem te lembrar o quanto eu desejo coisas boas pra você. Talvez a gente não tenha crescido na mesma casa, nem tenha o mesmo sangue, mas isso não muda o fato de que eu te considero minha irmãzinha de coração.</p>
+    <p>A vida fez nossos caminhos se cruzarem por uma telinha, e eu fico feliz por ter conhecido você. Mesmo com a distância, com nossas rotinas e com cada uma vivendo suas próprias coisas, quero que você saiba que eu torço de verdade pela sua felicidade.</p>
+    <p>Que esse novo ciclo te traga paz nos dias difíceis, risadas que façam a barriga doer, pessoas que te respeitem, sonhos que comecem a sair do papel e pequenas surpresas que deixem seu coração quentinho. Que você encontre coragem quando precisar, descanso quando estiver cansada e carinho mesmo nos dias comuns.</p>
+    <p>E, por favor, não se cobre por ter tudo resolvido. Você pode crescer no seu tempo, mudar de ideia, recomeçar quantas vezes precisar e continuar sendo alguém incrível no meio de tudo isso. Espero que nunca aceite menos respeito e cuidado do que merece.</p>
+    <p>Obrigada por fazer parte da minha vida, maninha. Eu espero que hoje você se sinta lembrada, querida e celebrada. E que, quando esse aniversário já tiver passado, ainda sobrem muitos motivos pra sorrir durante o resto do ano.</p>
+    <p>Não é a distância que decide quem é importante pra gente. Às vezes, família também é aquela pessoa que a gente escolhe guardar no coração. E eu guardo você com muito carinho. 🫶🏻</p>
+    <div class="signature">Feliz vida, minha maninha. ♡</div>
+  </div></div>
+</section>
+
+<section class="section reveal-on-scroll">
+  <div class="section-head"><p class="label">02 · meus desejos pra você</p><h2>Que esse novo ciclo te traga…</h2><p class="intro">Não só coisas enormes e extraordinárias. As coisas pequenas também fazem a vida ficar bonita.</p></div>
+  <div class="grid">
+    <article class="card"><span class="card-icon">🌷</span><h3>Leveza</h3><p>Dias tranquilos, risadas inesperadas e a liberdade de descansar sem sentir culpa.</p></article>
+    <article class="card"><span class="card-icon">✨</span><h3>Coragem</h3><p>Força pra tentar, mudar de rota e começar de novo quando o caminho pedir.</p></article>
+    <article class="card"><span class="card-icon">🫶</span><h3>Carinho de verdade</h3><p>Pessoas que te escutem, respeitem seus limites e gostem de você por quem você é.</p></article>
+    <article class="card"><span class="card-icon">🌙</span><h3>Paz</h3><p>Um pouco de silêncio bom na mente e aconchego depois dos dias complicados.</p></article>
+    <article class="card"><span class="card-icon">🦋</span><h3>Novas possibilidades</h3><p>Portas se abrindo, descobertas legais e memórias que você vai querer guardar.</p></article>
+    <article class="card"><span class="card-icon">💗</span><h3>Amor-próprio</h3><p>Que você se trate com a mesma gentileza que merece receber de quem está por perto.</p></article>
+  </div>
+</section>
+
+<section class="section reveal-on-scroll">
+  <div class="quote"><div class="quote-mark">“</div><blockquote>Família também pode ser quem a vida coloca no nosso caminho e o coração escolhe guardar.</blockquote><cite>— pra minha maninha de coração ♡</cite></div>
+</section>
+
+<section class="section reveal-on-scroll">
+  <div class="section-head"><p class="label">03 · uma surpresa pequenininha</p><h2>Guardei mais um recadinho pra você.</h2><p class="intro">Toca no botão. É seu. 💌</p></div>
+  <div class="secret-wrap">
+    <button class="btn btn-primary" id="openSecret">Abrir meu recadinho secreto ♡</button>
+    <div class="secret-message" id="secretMessage">Maninha, você não precisa fazer nada extraordinário pra merecer carinho. Você merece respeito, cuidado, amizade sincera e coisas boas simplesmente por ser você. Espero que esse novo ano te aproxime de tudo aquilo que faz bem ao seu coração. E, se algum dia você esquecer o quanto é importante, lembra que existe alguém aqui torcendo por você. Feliz aniversário! 💗🌷✨</div>
+  </div>
+</section>
+
+<section class="section reveal-on-scroll">
+  <div class="gift"><div class="gift-icon" aria-hidden="true">🎁</div><div><h3>Um último desejo</h3><p>Que você nunca precise fingir ser outra pessoa pra caber na vida de alguém. Que encontre lugares e pessoas onde possa ser você, com tranquilidade, e se sinta querida sem precisar implorar por isso.</p></div></div>
+</section>
+
+<footer class="footer"><div class="end-heart">♡ ✦ ♡</div><strong>Feliz aniversário, minha maninha.</strong><br>Mesmo de longe, tô torcendo por você.<br><span style="color:#ff91bd">feito especialmente pra você, com carinho. ♡</span></footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+ const sky=document.getElementById('sky');
+ for(let i=0;i<70;i++){
+   const star=document.createElement('i');star.className='star';
+   star.style.left=(Math.random()*100)+'%';star.style.top=(Math.random()*100)+'%';
+   star.style.setProperty('--dur',(2+Math.random()*4)+'s');
+   star.style.setProperty('--op',(0.2+Math.random()*0.7));
+   star.style.animationDelay=(Math.random()*4)+'s';sky.appendChild(star);
+ }
+ const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const observer=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}});
+ },{threshold:.08}):null;
+ document.querySelectorAll('.reveal-on-scroll').forEach(el=>{
+   if(observer)observer.observe(el);else el.classList.add('in');
+ });
+ const toast=document.getElementById('toast');let toastTimer;
+ function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2100)}
+ document.getElementById('goLetter').addEventListener('click',()=>document.getElementById('letter').scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'}));
+ function floatHeart(){
+   const el=document.createElement('span');el.className='float-heart';
+   el.textContent=['♡','♥','💗','✦','✨','🌸'][Math.floor(Math.random()*6)];
+   el.style.setProperty('--x',(Math.random()*100)+'vw');
+   el.style.setProperty('--size',(14+Math.random()*22)+'px');
+   el.style.setProperty('--color',['#ff91bd','#c8a8ff','#fff2f7','#ffe0a8'][Math.floor(Math.random()*4)]);
+   el.style.setProperty('--time',(5+Math.random()*4)+'s');
+   el.style.setProperty('--rot',(-35+Math.random()*70)+'deg');
+   document.getElementById('petals').appendChild(el);
+   setTimeout(()=>el.remove(),9500);
+ }
+ let heartTimer=null;
+ if(!reduceMotion)heartTimer=setInterval(floatHeart,950);
+ document.getElementById('sprinkle').addEventListener('click',()=>{
+   if(!reduceMotion){for(let i=0;i<25;i++)setTimeout(floatHeart,i*45)}
+   showToast('Um montão de carinho pra você, maninha! ♡');
+ });
+ document.getElementById('openSecret').addEventListener('click',()=>{
+   document.getElementById('secretMessage').classList.add('open');
+   document.getElementById('openSecret').textContent='Recadinho aberto: guarda com carinho 💗';
+   document.getElementById('openSecret').setAttribute('aria-expanded','true');
+   if(!reduceMotion){for(let i=0;i<18;i++)setTimeout(floatHeart,i*55)}
+ });
+})();
+</script>
+</body>
+</html>
